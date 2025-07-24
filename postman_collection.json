@@ -1,0 +1,115 @@
+{
+  "info": {
+    "_postman_id": "ecommerce-inventory-management-service",
+    "name": "E-commerce Inventory Management Service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Category",
+      "item": [
+        {
+          "name": "Create Category",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Electronics\"\n}"
+            },
+            "url": { "raw": "http://localhost:3000/api/categories", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api", "categories"] }
+          }
+        },
+        {
+          "name": "List Categories",
+          "request": { "method": "GET", "url": { "raw": "http://localhost:3000/api/categories", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api", "categories"] } }
+        },
+        {
+          "name": "Get Category",
+          "request": { "method": "GET", "url": { "raw": "http://localhost:3000/api/categories/:id", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api", "categories", ":id"] } }
+        },
+        {
+          "name": "Update Category",
+          "request": {
+            "method": "PUT",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Updated Category\"\n}" },
+            "url": { "raw": "http://localhost:3000/api/categories/:id", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api", "categories", ":id"] }
+          }
+        },
+        {
+          "name": "Delete Category",
+          "request": { "method": "DELETE", "url": { "raw": "http://localhost:3000/api/categories/:id", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api", "categories", ":id"] } }
+        }
+      ]
+    },
+    {
+      "name": "Product",
+      "item": [
+        {
+          "name": "Create Product",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"iPhone 15\",\n  \"description\": \"Latest iPhone\",\n  \"category\": \"<categoryId>\"\n}" },
+            "url": { "raw": "http://localhost:3000/api/products", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api", "products"] }
+          }
+        },
+        {
+          "name": "List Products",
+          "request": { "method": "GET", "url": { "raw": "http://localhost:3000/api/products", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api", "products"] } }
+        },
+        {
+          "name": "Get Product",
+          "request": { "method": "GET", "url": { "raw": "http://localhost:3000/api/products/:id", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api", "products", ":id"] } }
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "PUT",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\n  \"name\": \"Updated Product\",\n  \"description\": \"Updated description\",\n  \"category\": \"<categoryId>\"\n}" },
+            "url": { "raw": "http://localhost:3000/api/products/:id", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api", "products", ":id"] }
+          }
+        },
+        {
+          "name": "Delete Product",
+          "request": { "method": "DELETE", "url": { "raw": "http://localhost:3000/api/products/:id", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api", "products", ":id"] } }
+        }
+      ]
+    },
+    {
+      "name": "SKU",
+      "item": [
+        {
+          "name": "Add SKU",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\n  \"product\": \"<productId>\",\n  \"attributes\": {\n    \"color\": \"black\",\n    \"storage\": \"128GB\"\n  },\n  \"price\": 999,\n  \"stock\": 10,\n  \"currency\": \"USD\"\n}" },
+            "url": { "raw": "http://localhost:3000/api/skus", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api", "skus"] }
+          }
+        },
+        {
+          "name": "Get SKUs for Product",
+          "request": { "method": "GET", "url": { "raw": "http://localhost:3000/api/skus/product/:productId", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api", "skus", "product", ":productId"] } }
+        },
+        {
+          "name": "Update SKU",
+          "request": {
+            "method": "PUT",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": { "mode": "raw", "raw": "{\n  \"price\": 1099,\n  \"stock\": 8,\n  \"currency\": \"USD\"\n}" },
+            "url": { "raw": "http://localhost:3000/api/skus/:id", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api", "skus", ":id"] }
+          }
+        },
+        {
+          "name": "Delete SKU",
+          "request": { "method": "DELETE", "url": { "raw": "http://localhost:3000/api/skus/:id", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["api", "skus", ":id"] } }
+        }
+      ]
+    }
+  ]
+} 
